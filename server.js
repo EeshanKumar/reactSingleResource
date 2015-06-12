@@ -20,6 +20,9 @@ db.once('open', function() {
 	console.log('connection to Mongo DB successful');
 });
 
+//Setup Client Side
+app.use(express.static('./build'));
+
 //Setup passport
 var passport = require('passport');
 app.use(passport.initialize());
@@ -38,5 +41,5 @@ app.use(function(req, res, next) {
 
 //Turn on server
 app.listen(3000, function() {
-	console.log('Server started');
+	console.log('Server started on port 3000');
 });
