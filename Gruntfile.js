@@ -14,8 +14,10 @@ module.exports = function(grunt) {
 				'Gruntfile.js',
 				'server.js',
 				'test/**/*.js',
+        'lib/**/*.js',
 				'models/**/*.js',
-				'routes/**/*.js'
+				'routes/**/*.js',
+        'app/**/*.js'
 			]},
 			options: {
 				node: true,

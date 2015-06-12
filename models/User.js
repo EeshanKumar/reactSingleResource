@@ -6,7 +6,7 @@ var eat = require('eat');
 
 var userSchema = new mongoose.Schema({
 	basic: {
-		email: {type: String, unique: true, required: true}, 
+		email: {type: String, unique: true, required: true},
 		password: {type: String, required: true}
 	}
 });
@@ -27,7 +27,7 @@ userSchema.methods.verifyPassword = function(password, callback) {
 
 userSchema.methods.generateToken = function(secret, callback) {
 	eat.encode({id: this._id}, secret, callback);
-}
+};
 
 
 module.exports = mongoose.model('User', userSchema);
