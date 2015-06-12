@@ -4,11 +4,6 @@ var bodyparser = require('body-parser');
 var Dog = require('../models/Dog');
 var eatAuth = require('../lib/eat_auth')(process.env.APP_SECRET);
 
-//Add data validation
-Dog.schema.path('name').validate(function(value) {
-	return /Lassie|Buster|Quattro|Bub|Clifford|Squirt/i.test(value);
-}, 'Inappropriate dog name');
-
 function returnError(err, res) {
 	console.log(err);
 	return res.status(500).json({msg: "internal server error"});

@@ -3,12 +3,21 @@
 var React = require('react');
 
 module.exports = React.createClass({
-  getInitialState: function() {
-    return {};
+  renderDogs: function() {
+    return this.props.data.map(function(dog) {
+      return (
+        <li>
+          {dog.name}<br/>
+          {dog.breed}
+        </li>
+      );
+    });
   },
   render: function() {
     return (
-      <ul></ul>
+      <ul>
+        {this.renderDogs()}<br/>
+      </ul>
     );
   }
 });
